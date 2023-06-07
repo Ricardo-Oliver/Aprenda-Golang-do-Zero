@@ -18,7 +18,7 @@ func escrever(texto string) <-chan string {
 
 	go func() {
 		for {
-			fmt.Sprintln("Valor recebido: %s", texto)
+			canal <- fmt.Sprintf("Valor recebido: %s", texto)
 			time.Sleep(time.Millisecond * 500)
 		}
 	}()
